@@ -1,0 +1,43 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* linija pored komentara */
+
+.comments-container::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: -40px;
+    width: 3px;
+    height: 100%;
+    background-color: rgb(228, 228, 228);
+}
+
+.comment-container::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 57px;
+    width: 23px;
+    height: 3px;
+    background-color: rgb(228, 228, 228);
+    left: -40px;
+}
+
+.comment-container:last-child::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 60px;
+    left: -40px;
+    width: 3px;
+    height: calc(100% - 60px);
+    background-color: #f7f8fc;
+}
+
+.admin {
+    border-width: 1px;
+    border-color: #21c8f6;
+}
