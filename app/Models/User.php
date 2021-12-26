@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Idea;
+use Nette\Utils\Random;
+use SebastianBergmann\Environment\Console;
 
 class User extends Authenticatable
 {
@@ -50,6 +52,10 @@ class User extends Authenticatable
 
     public function getAvatar()
     {
-        return 'https://www.gravatar.com/avatar/' . md5($this->email) . '?s=200' . '&d=mp';
+        $name = $this->name;
+
+        $color = substr(md5($name), 0, 6);
+
+        return 'https://avatars.dicebear.com/api/bottts/' . md5($name) . '.svg' . '?b=%23' . $color;
     }
 }
