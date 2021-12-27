@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\Category;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -14,6 +15,8 @@ class ShowIdeasTest extends TestCase
     // test
     public function test_list_of_ideas_shows_on_main_page()
     {
+        $categoryOne = Category::factory()->create(['name' => 'Category 1']);
+
         $ideaOne = Idea::factory()->create([
             'title' => 'first title',
             'description' => 'first description title',

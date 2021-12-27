@@ -65,8 +65,20 @@
             <div class="border-2 border-blue rounded-xl mt-16 bg-white md:sticky md:top-8 ">
                 <div class="text-center px-6 py-2 pt-6">
                     <h3 class="font-semibold text-base">Add an idea</h3>
-                    <p class="text-xs mt-4">Let us know what you would like and well take a look</p>
+                    <p class="text-xs mt-4">
+                        @auth
+
+                        Let us know what you would like and well take a look
+
+                        @else
+
+                        Please login to create an idea.
+
+                        @endauth
+                    </p>
                 </div>
+                @auth
+
                 <form action="#" class="space-y-4 px-4 py-6" method="POST">
                     <div>
                         <input type="text" class="w-full bg-gray-100 rounded-xl placeholder-gray-900 border-none py-2 px-4 text-sm " placeholder="Your idea">
@@ -89,11 +101,24 @@
                             </svg>
                             <span class="ml-1">Attach</span>
                         </button>
-                        <button type="submit" @click="isOpen = !isOpen" class="flex items-center justify-center w-32 h-11 text-xs bg-blue font-semibold rounded-xl border border-blue hover:bg-blue-hover transition duration-200 ease-in px-6 py-3 text-white">
+                        <button type="submit" class="flex items-center justify-center w-1/2 h-11 text-xs bg-blue font-semibold rounded-xl border border-blue hover:bg-blue-hover transition duration-200 ease-in px-6 py-3 text-white">
                             <span>Submit</span>
                         </button>
                     </div>
                 </form>
+
+                @else
+
+                <div class="my-6 text-center">
+                    <a href="{{ route('login') }}" class="inline-block justify-center w-1/2 h-11 text-xs bg-blue font-semibold rounded-xl border border-blue hover:bg-blue-hover transition duration-200 ease-in px-6 py-3 text-white">
+                        Login
+                    </a>
+                    <a href="{{ route('register') }}" class="inline-block justify-center w-1/2 h-11 text-xs bg-gray-200 font-semibold rounded-xl border border-gray-200 hover:border-gray-400 transition duration-200 ease-in px-6 py-3 mt-2">
+                        Sign up
+                    </a>
+                </div>
+
+                @endauth
             </div>
         </div>
         <div class="w-full px-2 md:px-0 md:w-175">
