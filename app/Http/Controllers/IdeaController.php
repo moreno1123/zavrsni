@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Idea;
 use App\Http\Requests\StoreIdeaRequest;
 use App\Http\Requests\UpdateIdeaRequest;
+use App\Models\Category;
 
 class IdeaController extends Controller
 {
@@ -16,9 +17,10 @@ class IdeaController extends Controller
     public function index()
     {
         return view('idea.index', [
-            'ideas' => Idea::with('user', 'category')->simplePaginate(10),
+            'ideas' => Idea::with('user', 'category')->orderBy('id', 'desc')->simplePaginate(10),
         ]);
     }
+
 
     /**
      * Show the form for creating a new resource.
