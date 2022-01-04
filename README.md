@@ -1,4 +1,4 @@
-This is my final paper. I'm building somekind of a forum. // Stack is https://tallstack.dev/ with a few other libraries like https://en.gravatar.com/. //   
+This is my final paper. I'm building somekind of a forum. // Stack is https://tallstack.dev/ with a few libraries like https://avatars.dicebear.com/ and https://github.com/cviebrock/eloquent-sluggable. //   
 
 
 
