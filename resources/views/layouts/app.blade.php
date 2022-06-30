@@ -60,9 +60,9 @@
         </div>
     </header>
 
-    <main class="container mx-auto max-w-costum flex flex-col md:flex-row">
-        <div class="w-70 mr-5 mx-auto md:mx-0 md:mr-5">
-            <div class="border-2 border-blue rounded-xl mt-16 bg-white md:sticky md:top-8 ">
+    <main class="container mx-auto max-w-main flex flex-col md:flex-row">
+        <div class="md:w-70 w-10/12 mx-auto md:ml-1 md:mr-5">
+            <div class="border-2 border-blue rounded-xl mt-16 bg-white md:sticky md:top-8 w-full">
                 <div class="text-center px-6 py-2 pt-6">
                     <h3 class="font-semibold text-base">Add an idea</h3>
                     <p class="text-xs mt-4">
@@ -95,15 +95,15 @@
                 @endauth
             </div>
         </div>
-        <div class="w-full px-2 md:px-0 md:w-175">
+        <div class="w-full px-2 md:px-0 md:w-175 mr-1">
             <nav class="hidden md:flex items-center justify-between text-xs">
-                <ul class="flex uppercase font-semibold space-x-10 border-b-4 pb-3">
+                <ul class="flex uppercase font-semibold space-x-20 border-b-4 pb-3">
                     <li><a href="#" class="border-b-4 pb-3 border-blue">All ideas (87)</a></li>
                     <li><a href="#" class="text-gray-400 transition duration-200 ease-in border-b-4 pb-3 hover:border-blue">Considering (9)</a></li>
                     <li><a href="#" class="text-gray-400 transition duration-200 ease-in border-b-4 pb-3 hover:border-blue">In Progress (9)</a></li>
                 </ul>
 
-                <ul class="flex uppercase font-semibold space-x-10 border-b-4 pb-3">
+                <ul class="hidden lg:flex uppercase font-semibold space-x-10 border-b-4 pb-3">
                     <li><a href="#" class="text-gray-400 transition duration-200 ease-in border-b-4 pb-3 hover:border-blue">Implemented (10)</a></li>
                     <li><a href="#" class="text-gray-400 transition duration-200 ease-in border-b-4 pb-3 hover:border-blue">Closed (55)</a></li>
                 </ul>
@@ -113,6 +113,7 @@
                 {{ $slot }}
             </div>
         </div>
+
     </main>
     <livewire:scripts />
 </body>

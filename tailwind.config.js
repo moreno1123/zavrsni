@@ -19,7 +19,7 @@ module.exports = {
                 'purple': '#8b60ed',
             },
             maxWidth:{
-                costum:'68.5rem',
+                main:'68.5rem',
             },
             spacing:{
                 70:'17.5rem',

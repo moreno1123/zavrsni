@@ -7411,7 +7411,7 @@ select {
   max-width: 1536px;
 }
 
-.max-w-costum {
+.max-w-main {
   max-width: 68.5rem;
 }
 
@@ -31810,7 +31810,7 @@ select {
     max-width: 1536px;
   }
 
-  .sm\:max-w-costum {
+  .sm\:max-w-main {
     max-width: 68.5rem;
   }
 
@@ -56091,7 +56091,7 @@ select {
     max-width: 1536px;
   }
 
-  .md\:max-w-costum {
+  .md\:max-w-main {
     max-width: 68.5rem;
   }
 
@@ -80372,7 +80372,7 @@ select {
     max-width: 1536px;
   }
 
-  .lg\:max-w-costum {
+  .lg\:max-w-main {
     max-width: 68.5rem;
   }
 
@@ -104653,7 +104653,7 @@ select {
     max-width: 1536px;
   }
 
-  .xl\:max-w-costum {
+  .xl\:max-w-main {
     max-width: 68.5rem;
   }
 
@@ -128934,7 +128934,7 @@ select {
     max-width: 1536px;
   }
 
-  .\32xl\:max-w-costum {
+  .\32xl\:max-w-main {
     max-width: 68.5rem;
   }
 
