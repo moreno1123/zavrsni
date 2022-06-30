@@ -13,7 +13,7 @@
         </div>
         <div class="w-full md:w-1/3">
             <select name="other_filter" id="other_filter" class="w-full rounded-xl px-4 py-2 border-none">
-                <option value="Filter one">Filter one</option>
+                <option value="Filter one">Filter</option>
                 <option value="Filter two">Filter two</option>
                 <option value="Filter three">Filter three</option>
                 <option value="Filter four">Filter four</option>
