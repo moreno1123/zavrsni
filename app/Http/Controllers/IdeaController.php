@@ -40,7 +40,15 @@ class IdeaController extends Controller
      */
     public function store(StoreIdeaRequest $request)
     {
-        //
+        $idea = Idea::create([
+            'user_id' => auth()->id(),
+            'category_id' => $request->category,
+            'title' => $request->title,
+            'description' => $request->description,
+        ]);
+        $idea->save();
+
+        return redirect('/');
     }
 
     /**
