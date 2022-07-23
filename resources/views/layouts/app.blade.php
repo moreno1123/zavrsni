@@ -79,7 +79,7 @@
                 </div>
                 @auth
 
-                <livewire:create-idea />
+                @include('layouts.createIdea')
 
                 @else
 

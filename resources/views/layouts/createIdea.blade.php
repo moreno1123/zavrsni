@@ -1,13 +1,14 @@
-<form wire:submit.prevent="createIdea" action="#" class="space-y-4 px-4 py-6" method="POST">
+<form action="create" class="space-y-4 px-4 py-6" method="POST">
+    @csrf
     <div>
-        <input wire:model.defer="title" type="text" class="w-full bg-gray-100 rounded-xl placeholder-gray-900 border-none py-2 px-4 text-sm " placeholder="Your idea" required>
+        <input name="title" type="text" class="w-full bg-gray-100 rounded-xl placeholder-gray-900 border-none py-2 px-4 text-sm " placeholder="Your idea" required>
         @error('title')
         <p class="text-red text-xs mt-1">{{ $message }}</p>
         @enderror
     </div>
     <div>
-        <select wire:model.defer="category" name="category_add" id="category_add" class="w-full rounded-xl px-4 py-2 border-none bg-gray-100 text-sm">
-            @foreach($categories as $category)
+        <select name="category" id="category" class="w-full rounded-xl px-4 py-2 border-none bg-gray-100 text-sm">
+            @foreach(\App\Models\Category::orderBy('id')->get() as $category)
             <option value="{{ $category -> id }}">{{ $category -> name }}</option>
             @endforeach
         </select>
@@ -17,7 +18,7 @@
     <p class="text-red text-xs mt-1">{{ $message }}</p>
     @enderror
     <div>
-        <textarea wire:model.defer="description" name="idea" id="idea" cols="30" rows="4" class="w-full bg-gray-100 rounded-xl placeholder-gray-900 text-sm px-4 py-2 border-none" placeholder="Describe your idea" required></textarea>
+        <textarea name="description" id="idea" cols="30" rows="4" class="w-full bg-gray-100 rounded-xl placeholder-gray-900 text-sm px-4 py-2 border-none" placeholder="Describe your idea" required></textarea>
         @error('description')
         <p class="text-red text-xs mt-1">{{ $message }}</p>
         @enderror
