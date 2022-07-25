@@ -79,7 +79,7 @@
                 </div>
                 @auth
 
-                @include('layouts.createIdea')
+                @include('idea.createIdea')
 
                 @else
 

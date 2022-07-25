@@ -6,6 +6,7 @@ use App\Models\Idea;
 use App\Http\Requests\StoreIdeaRequest;
 use App\Http\Requests\UpdateIdeaRequest;
 use App\Models\Category;
+use App\Models\Vote;
 
 class IdeaController extends Controller
 {
@@ -17,7 +18,7 @@ class IdeaController extends Controller
     public function index()
     {
         return view('idea.index', [
-            'ideas' => Idea::with('user', 'category')->orderBy('id', 'desc')->simplePaginate(10),
+            'ideas' => Idea::with('user', 'category')->addSelect(['voted_by_user' => Vote::select('id')->where('user_id', auth()->id())->whereColumn('idea_id', 'ideas.id')])->withCount('votes')->orderBy('id', 'desc')->simplePaginate(10),
         ]);
     }
 
@@ -48,7 +49,7 @@ class IdeaController extends Controller
         ]);
         $idea->save();
 
-        return redirect('/');
+        return redirect('/')->with('success', 'Ideja je kreirana!');
     }
 
     /**
@@ -61,6 +62,7 @@ class IdeaController extends Controller
     {
         return view('idea.show', [
             'idea' => $idea,
+            'votes' => $idea->votes()->count(),
         ]);
     }
 
