@@ -1,0 +1,111 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+[x-cloak] {
+    display: none !important;
+}
+
+.comments-container::before {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: -40px;
+    content: "";
+    width: 3px;
+    height: 100%;
+    background: #edf0f5;
+}
+
+.comment-container::before {
+    position: absolute;
+    display: block;
+    top: 57px;
+    content: "";
+    width: 23px;
+    height: 3px;
+    background: #edf0f5;
+    left: -40px;
+}
+
+.comment-container:last-child::after {
+    position: absolute;
+    display: block;
+    top: 60px;
+    left: -40px;
+    content: "";
+    width: 3px;
+    height: calc(100% - 60px);
+    background: theme('colors.gray-background');
+}
+
+input[type='file']::file-selector-button {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    border: 1px solid rgba(229, 229, 229, var(--tw-bg-opacity));
+    padding: .3rem 1.2rem;
+    border-radius: .25em;
+    background-color: rgba(229, 229, 229, var(--tw-bg-opacity));
+    transition: ease 150ms;
+    cursor: pointer;
+    margin-left: 1.5rem;
+  }
+
+  #file{
+    width: 10rem;
+  }
+  
+  input[type=file]::file-selector-button:hover {
+    background-color: rgba(163, 163, 163, var(--tw-text-opacity));
+  }
+
+  .table{
+    background-color: rgb(252, 252, 252);
+  }
+
+  #col_one{
+    border-top:none;
+  }
+
+  th, td{
+    border-top: 1px solid rgb(160, 159, 159);
+  }
+
+  #row_one, #row_two, .row_three{
+    padding: 1rem;
+    border-top: none;
+  }
+
+  #row_three{
+    padding-left: 0;
+  }
+
+  #row_four{
+    padding: 0.75rem;
+    padding-left: 1rem;
+  }
+
+  #row_five{
+    padding-left: 3.5rem;
+  }
+
+  .bg-green-button{
+    background-color: green;
+  }
+
+  .bg-green-button:hover{
+    background-color: rgb(5, 87, 5);
+  }
+
+  .bg-red-button{
+    background-color: rgb(153, 19, 19);
+  }
+
+  .bg-red-button:hover {
+    background-color: rgb(112, 14, 14);
+  }
+
+  .-top-8{
+    top: -2rem;
+  }
